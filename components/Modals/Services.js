@@ -63,7 +63,7 @@ const Services = () => {
       >
         <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
           <Grid item xs={12} sm={12} md={12} lg={4}>
-            <Link href="/service" passherf>
+            <Link href="/service" passHref>
               <Card sx={{ minHeight: "400px" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <CardHeader
@@ -109,7 +109,7 @@ const Services = () => {
             </Link>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={4}>
-            <Link href="/service" passherf>
+            <Link href="/service" passHref>
               <Card sx={{ minHeight: "400px" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <CardHeader
@@ -156,7 +156,7 @@ const Services = () => {
             </Link>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={4}>
-            <Link href="/service" passherf>
+            <Link href="/service" passHref>
               <Card sx={{ minHeight: "400px" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <CardHeader
