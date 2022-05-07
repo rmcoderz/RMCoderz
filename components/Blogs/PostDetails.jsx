@@ -5,8 +5,6 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  useTheme,
-  useMediaQuery,
 } from "@mui/material";
 import React from "react";
 import moment from "moment";
