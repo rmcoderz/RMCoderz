@@ -12,10 +12,7 @@ import React from "react";
 import moment from "moment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
-const PostDetails = ({ blog }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
+const PostDetails = ({ blog, isMobile }) => {
   const getContentFragment = (index, text, obj, type) => {
     console.log(
       "🚀 ~ file: PostDetails.jsx ~ line 15 ~ getContentFragment ~ text",

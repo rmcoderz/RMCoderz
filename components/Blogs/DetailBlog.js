@@ -10,6 +10,7 @@ import Categories from "./Categories";
 const postDetails = ({ blog }) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box sx={{ width: "80%", margin: "40px auto" }}>
@@ -26,7 +27,7 @@ const postDetails = ({ blog }) => {
             marginRight: "auto",
           }}
         >
-          <PostDetails blog={blog} />
+          <PostDetails blog={blog} isMobile={isMobile} />
           <Author author={blog.author} />
           {/* <AdjacentPosts slug={blog.slug} createdAt={blog.createdAt} /> */}
           <CommentsForm slug={blog.slug} />
