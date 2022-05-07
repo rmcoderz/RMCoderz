@@ -7,7 +7,7 @@ import CommentsForm from "./CommentsForm";
 import PostWidget from "./PostWidget";
 import Categories from "./Categories";
 
-const postDetails = ({ blog }) => {
+const DetailBlog = ({ blog }) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -29,7 +29,6 @@ const postDetails = ({ blog }) => {
         >
           <PostDetails blog={blog} isMobile={isMobile} />
           <Author author={blog.author} />
-          {/* <AdjacentPosts slug={blog.slug} createdAt={blog.createdAt} /> */}
           <CommentsForm slug={blog.slug} />
           <Comments slug={blog.slug} />
         </Grid>
@@ -52,4 +51,4 @@ const postDetails = ({ blog }) => {
   );
 };
 
-export default postDetails;
+export default DetailBlog;

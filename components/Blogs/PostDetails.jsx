@@ -12,19 +12,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 const PostDetails = ({ blog, isMobile }) => {
   const getContentFragment = (index, text, obj, type) => {
-    console.log(
-      "🚀 ~ file: PostDetails.jsx ~ line 15 ~ getContentFragment ~ text",
-      text,
-    );
-    console.log(
-      "🚀 ~ file: PostDetails.jsx ~ line 15 ~ getContentFragment ~ obj",
-      obj,
-    );
     let modifiedText = text;
-    console.log(
-      "🚀 ~ file: PostDetails.jsx ~ line 20 ~ getContentFragment ~ modifiedText",
-      modifiedText,
-    );
 
     if (obj) {
       if (obj.bold) {
