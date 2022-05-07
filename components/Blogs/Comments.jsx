@@ -18,7 +18,7 @@ const Comments = ({ slug }) => {
 
   useEffect(() => {
     getComments(slug).then((comment) => setComment(comment));
-  }, []);
+  });
 
   return (
     <Box
@@ -41,8 +41,8 @@ const Comments = ({ slug }) => {
       >
         {comment.length} comments
       </Typography>
-      {comment.map((comment) => (
-        <CommentCard>
+      {comment.map((comment, index) => (
+        <CommentCard key={index}>
           <CardContent>
             <Typography
               variant="h3"

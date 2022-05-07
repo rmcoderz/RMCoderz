@@ -67,7 +67,7 @@ const service = () => {
       <OurServicesHero />
       <ServicePackageTitle />
       {ServicePackages.map((item, index) => (
-        <ServicePackage item={item} index={index} />
+        <ServicePackage item={item} index={index} key={index} />
       ))}
       <Footer />
       <FooterLine />

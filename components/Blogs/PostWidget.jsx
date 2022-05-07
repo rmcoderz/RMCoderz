@@ -24,7 +24,7 @@ const PostWidget = ({ categories, slug }) => {
     } else {
       getRecentPosts().then((result) => setRelatedPosts(result));
     }
-  }, [slug]);
+  }, [slug, categories]);
 
   return (
     <Box
@@ -47,8 +47,9 @@ const PostWidget = ({ categories, slug }) => {
       >
         {slug ? "RelatedPosts" : "Recent Posts"}
       </Typography>
-      {relatedPosts.map((post) => (
+      {relatedPosts.map((post, index) => (
         <Box
+          key={index}
           sx={{
             display: "flex",
             flexDirection: "row",
@@ -57,7 +58,7 @@ const PostWidget = ({ categories, slug }) => {
             margin: "15px",
           }}
         >
-          <Link passhref href={`/blog/${post.slug}`} key={post.title}>
+          <Link passHref href={`/blog/${post.slug}`} key={post.title}>
             <Avatar
               alt={post.title}
               src={post.featuredimage.url}
@@ -78,7 +79,7 @@ const PostWidget = ({ categories, slug }) => {
               justifyContent: "center",
             }}
           >
-            <Link passhref href={`/blog/${post.slug}`} key={post.title}>
+            <Link passHref href={`/blog/${post.slug}`} key={post.title}>
               <Typography
                 variant="h5"
                 sx={{

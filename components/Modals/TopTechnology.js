@@ -44,7 +44,7 @@ const TopTechnology = () => {
       </Typography>
       <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
         <Grid item xs={12} sm={12} md={6} lg={3}>
-          <Link href="/blog" passhref>
+          <Link href="/blog" passHref>
             <Card sx={{ minHeight: "300px" }}>
               <CardHeader
                 avatar={
@@ -73,7 +73,7 @@ const TopTechnology = () => {
           </Link>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}>
-          <Link href="/blog" passhref>
+          <Link href="/blog" passHref>
             <Card sx={{ minHeight: "300px" }}>
               <CardHeader
                 avatar={
@@ -102,7 +102,7 @@ const TopTechnology = () => {
           </Link>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}>
-          <Link href="/blog" passhref>
+          <Link href="/blog" passHref>
             <Card sx={{ minHeight: "300px" }}>
               <CardHeader
                 avatar={<Image src={VUE} alt="Vue.JS" width={50} height={50} />}
@@ -129,7 +129,7 @@ const TopTechnology = () => {
           </Link>
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}>
-          <Link href="/blog" passhref>
+          <Link href="/blog" passHref>
             <Card sx={{ minHeight: "300px" }}>
               <CardHeader
                 avatar={

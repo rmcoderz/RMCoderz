@@ -32,7 +32,7 @@ const Categories = () => {
       </Typography>
       {categories.map((categories) => (
         <Link
-          passhref
+          passHref
           href={`/category/${categories.slug}`}
           key={categories.name}
         >
