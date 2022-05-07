@@ -2,7 +2,6 @@ import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 
 const Author = ({ author }) => {
-  console.log("🚀 ~ file: Author.jsx ~ line 6 ~ Author ~ author", author);
   return (
     <Box
       sx={{

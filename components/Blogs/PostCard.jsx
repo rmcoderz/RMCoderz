@@ -14,7 +14,6 @@ import moment from "moment";
 
 const PostCard = ({ post }) => {
   const router = useRouter();
-  console.log("🚀 ~ file: PostCard.jsx ~ line 4 ~ PostCard ~ post", post);
   return (
     <Box sx={{ margin: "0px 0px 20px 0px" }}>
       <Card>

@@ -5,17 +5,7 @@ import moment from "moment";
 import Link from "next/link";
 
 const PostWidget = ({ categories, slug }) => {
-  console.log("🚀 ~ file: PostWidget.jsx ~ line 8 ~ PostWidget ~ slug", slug);
-  console.log(
-    "🚀 ~ file: PostWidget.jsx ~ line 8 ~ PostWidget ~ categories",
-    categories,
-  );
   const [relatedPosts, setRelatedPosts] = useState([]);
-  console.log(
-    "🚀 ~ file: PostWidget.jsx ~ line 8 ~ PostWidget ~ relatedPosts",
-    relatedPosts,
-  );
-
   useEffect(() => {
     if (slug) {
       getSimilarPosts(categories, slug).then((result) =>
