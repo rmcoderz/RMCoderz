@@ -1,0 +1,80 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: "#ffffe6";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/Hero.png");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+} */
+
+.AboutImageContainer {
+  background-image: url(../assets/CreativesForWebsite/AboutDetails.png);
+}
+
+.adjacent-post .arrow-btn {
+  -webkit-transition: width 300ms ease;
+  transition: width 300ms ease;
+  width: 50px;
+}
+
+.adjacent-post:hover .arrow-btn {
+  width: 60px;
+}
+
+.react-multi-carousel-list .arrow-btn {
+  -webkit-transition: width 300ms ease;
+  transition: width 300ms ease;
+  width: 50px;
+}
+
+.react-multi-carousel-list .arrow-btn:hover {
+  width: 60px;
+}
