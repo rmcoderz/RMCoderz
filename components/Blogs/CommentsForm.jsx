@@ -1,6 +1,5 @@
 import {
   Box,
-  Checkbox,
   Grid,
   TextField,
   Typography,

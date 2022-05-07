@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import React from "react";
 
 const AboutDetails = () => {

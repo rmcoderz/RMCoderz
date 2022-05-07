@@ -21,7 +21,7 @@ import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded
 import BookRoundedIcon from "@mui/icons-material/BookRounded";
 import ConnectWithoutContactRoundedIcon from "@mui/icons-material/ConnectWithoutContactRounded";
 
-const Navbar = ({ activeTab, selectedTab }) => {
+const Navbar = ({ activeTab }) => {
   const router = useRouter();
   const [value, setValue] = useState();
   const theme = useTheme();

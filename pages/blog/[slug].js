@@ -1,14 +1,20 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import Footer from "../../components/Footer/Footer";
 import FooterLine from "../../components/Footer/FooterLine";
 import Navbar from "../../components/Navbar/Navbar";
 import DetailBlog from "../../components/Blogs/DetailBlog";
 import BlogHero from "../../components/Hero/BlogHero";
+import Loader from "../../components/Blogs/Loader";
 import { getPostDetails, getPosts } from "../../ServicesQl";
 
 const PostDetails = ({ post, slug }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <Loader />;
+  }
   const activeTab = `/blog/${slug}`;
   const selectedValue = 3;
   return (

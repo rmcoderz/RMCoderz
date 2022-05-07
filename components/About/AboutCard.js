@@ -9,7 +9,6 @@ import {
   styled,
 } from "@mui/material";
 import React from "react";
-import Hero from "../../assets/images/Hero.png";
 
 const AboutCard = () => {
   const theme = useTheme();
