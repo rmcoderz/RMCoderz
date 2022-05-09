@@ -16,6 +16,8 @@ const OurServicesHero = () => {
   const router = useRouter();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const isLaptop = useMediaQuery(theme.breakpoints.between("lg", "xl"));
+
   return (
     <Box sx={{ backgroundColor: "#003030" }}>
       <Box
@@ -23,7 +25,7 @@ const OurServicesHero = () => {
           width: "80%",
           marginLeft: "auto",
           marginRight: "auto",
-          height: "800px",
+          height: isLaptop ? "500px" : "800px",
           display: "flex",
         }}
       >
@@ -56,7 +58,7 @@ const OurServicesHero = () => {
             }}
           >
             {isMatch ? (
-              <>
+              <Box sx={{ flexDirection: "row" }}>
                 <Typography
                   variant="h5"
                   sx={{
@@ -67,15 +69,27 @@ const OurServicesHero = () => {
                     fontFamily: "Montserrat, sans-serif",
                   }}
                 >
-                  {`SERVICES BY RM <CODERZ/>`}
+                  {`SERVICES BY`}
+                </Typography>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: "bold",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    color: "white",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                >
+                  {`RM < CODERZ />`}
                 </Typography>
                 {/* <Typography variant="h5" sx={{ paddingTop: "25px" }}>
                 Implement New Web technologies To Transform, Accelerate and
                 Optimize Your Local Business or Services.
               </Typography> */}
-              </>
+              </Box>
             ) : (
-              <>
+              <Box sx={{ flexDirection: "row" }}>
                 <Typography
                   variant="h3"
                   sx={{
@@ -86,13 +100,25 @@ const OurServicesHero = () => {
                     fontFamily: "Montserrat, sans-serif",
                   }}
                 >
-                  {`SERVICES BY RM <CODERZ/>`}
+                  {`SERVICES BY`}
+                </Typography>
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontWeight: "bold",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    color: "White",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                >
+                  {`RM <CODERZ/>`}
                 </Typography>
                 {/* <Typography variant="h5" sx={{ paddingTop: "25px" }}>
                 Implement New Web technologies To Transform, Accelerate and
                 Optimize Your Local Business or Services.
               </Typography> */}
-              </>
+              </Box>
             )}
             {/* <HeroButton
             variant="outlined"

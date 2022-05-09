@@ -79,22 +79,27 @@ const PostDetails = ({ blog, isMobile }) => {
 
   return (
     <Box>
-      <Card>
+      <Card sx={{ borderRadius: "15px" }}>
         <CardMedia
           image={blog.featuredimage.url}
           sx={{
-            width: "500px",
-            height: "500px",
+            width: isMobile ? "none" : "500px",
+            height: isMobile ? "400px" : "500px",
             objectFit: "cover",
-            margin: "10px auto",
+            margin: isMobile ? "0px" : "10px auto",
           }}
         />
-        <CardContent sx={{ padding: "20px 20px", backgroundColor: "#ffffe6" }}>
+        <CardContent
+          sx={{
+            padding: isMobile ? "10px" : "20px",
+            backgroundColor: "#ffffe6",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: isMobile ? "flex-start" : "center",
               justifyContent: "space-between",
             }}
           >
@@ -116,39 +121,69 @@ const PostDetails = ({ blog, isMobile }) => {
                   boxShadow: "0px 0px 20px #888888",
                 }}
               />
-              <Typography
-                variant="h5"
+              <Box
                 sx={{
-                  fontWeight: "bold",
-                  color: "#003030",
-                  margin: "0px 10px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  justifyContent: "center",
                 }}
               >
-                {blog.author.name}
-              </Typography>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#003030",
+                    margin: "0px 10px",
+                    fontSize: isMobile ? "18px" : "24px",
+                  }}
+                >
+                  {blog.author.name}
+                </Typography>
+                {isMobile && (
+                  <>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        color: "#003030",
+                        margin: "0px 10px",
+                        fontSize: isMobile ? "16px" : "20px",
+                      }}
+                    >
+                      {moment(blog.createdAt).format("MMM DD, YYYY")}
+                    </Typography>
+                  </>
+                )}
+              </Box>
             </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <CalendarMonthIcon
-                sx={{ color: "#003030", margin: "0px", fontSize: "56px" }}
-              />
-              <Typography
-                variant="h5"
+            {!isMobile && (
+              <Box
                 sx={{
-                  color: "#003030",
-                  margin: "0px 10px",
-                  fontSize: "20px",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                {moment(blog.createdAt).format("MMM DD, YYYY")}
-              </Typography>
-            </Box>
+                <CalendarMonthIcon
+                  sx={{
+                    color: "#003030",
+                    margin: "0px",
+                    fontSize: isMobile ? "30px" : "56px",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    color: "#003030",
+                    margin: "0px 10px",
+                    fontSize: isMobile ? "16px" : "20px",
+                  }}
+                >
+                  {moment(blog.createdAt).format("MMM DD, YYYY")}
+                </Typography>
+              </Box>
+            )}
           </Box>
           <Box>
             <Typography
@@ -168,10 +203,9 @@ const PostDetails = ({ blog, isMobile }) => {
               sx={{
                 color: "#003030",
                 margin: "0px 10px",
-                fontSize: "20px",
+                fontSize: isMobile ? "16px" : "24px",
               }}
             >
-              {console.log(blog.content)}
               {blog.content.raw.children.map((typeObj, index) => {
                 const children = typeObj.children.map((item, itemindex) =>
                   getContentFragment(itemindex, item.text, item),

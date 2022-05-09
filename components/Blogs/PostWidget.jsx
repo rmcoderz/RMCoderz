@@ -4,7 +4,7 @@ import { getRecentPosts, getSimilarPosts } from "../../ServicesQl";
 import moment from "moment";
 import Link from "next/link";
 
-const PostWidget = ({ categories, slug }) => {
+const PostWidget = ({ categories, slug, isMobile }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   useEffect(() => {
     if (slug) {
@@ -33,6 +33,7 @@ const PostWidget = ({ categories, slug }) => {
           margin: "0px 10px",
           borderBottom: "2px solid #ffffe6",
           paddingBottom: "10px",
+          fontSize: isMobile ? "18px" : "24px",
         }}
       >
         {slug ? "RelatedPosts" : "Recent Posts"}
@@ -53,8 +54,8 @@ const PostWidget = ({ categories, slug }) => {
               alt={post.title}
               src={post.featuredimage.url}
               sx={{
-                width: 56,
-                height: 56,
+                width: isMobile ? 44 : 56,
+                height: isMobile ? 44 : 56,
                 border: "2px solid #e6e6e6",
                 boxShadow: "0px 0px 10px #888888",
                 cursor: "pointer",
@@ -77,6 +78,7 @@ const PostWidget = ({ categories, slug }) => {
                   color: "#ffffe6",
                   margin: "0px 10px",
                   cursor: "pointer",
+                  fontSize: isMobile ? "16px" : "20px",
                 }}
               >
                 {post.title}
@@ -87,7 +89,7 @@ const PostWidget = ({ categories, slug }) => {
               sx={{
                 color: "#ffffe6",
                 margin: "0px 10px",
-                fontSize: "16px",
+                fontSize: isMobile ? "14px" : "16px",
               }}
             >
               {moment(post.createdAt).format("MMM DD, YYYY")}

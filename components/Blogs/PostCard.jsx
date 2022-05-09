@@ -12,27 +12,32 @@ import { useRouter } from "next/router";
 import React from "react";
 import moment from "moment";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, isMobile }) => {
   const router = useRouter();
   return (
     <Box sx={{ margin: "0px 0px 20px 0px" }}>
-      <Card>
+      <Card sx={{ borderRadius: "15px" }}>
         <CardMedia
           image={post.featuredimage.url}
           sx={{
-            width: "500px",
-            height: "500px",
+            width: isMobile ? "none" : "500px",
+            height: isMobile ? "400px" : "500px",
             objectFit: "cover",
-            margin: "10px auto",
+            margin: isMobile ? "none" : "10px auto",
           }}
         />
-        <CardContent sx={{ padding: "20px 20px", backgroundColor: "#ffffe6" }}>
+        <CardContent
+          sx={{
+            padding: isMobile ? "10px" : "20px 20px",
+            backgroundColor: "#ffffe6",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: isMobile ? "flex-start" : "center",
             }}
           >
             <Avatar
@@ -54,11 +59,12 @@ const PostCard = ({ post }) => {
               }}
             >
               <Typography
-                variant="h5"
+                variant={isMobile ? "h6" : "h5"}
                 sx={{
                   fontWeight: "bold",
                   color: "#003030",
                   margin: "0px 10px",
+                  fontSize: isMobile ? "18px" : "24px",
                 }}
               >
                 {post.author.name}
@@ -68,7 +74,7 @@ const PostCard = ({ post }) => {
                 sx={{
                   color: "#003030",
                   margin: "0px 10px",
-                  fontSize: "16px",
+                  fontSize: isMobile ? "14px" : "16px",
                 }}
               >
                 {moment(post.createdAt).format("MMM DD, YYYY")}
@@ -80,20 +86,30 @@ const PostCard = ({ post }) => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "flex-start",
               margin: "10px auto",
-              width: "60%",
+              padding: isMobile ? "10px" : "0px",
+              width: isMobile ? "none" : "60%",
             }}
           >
             <Typography
               variant="h5"
-              sx={{ fontSize: "24px", textAlign: "center" }}
+              sx={{
+                fontSize: isMobile ? "16px" : "24px",
+                textAlign: isMobile ? "start" : "center",
+              }}
             >
               {post.excert}
             </Typography>
             <HeroButton
               variant="outlined"
+              isMobile={isMobile}
               onClick={() => router.push(`/blog/${post.slug}`)}
+              sx={{
+                fontSize: isMobile ? 16 : 26,
+                margin: isMobile ? "5px auto" : "25px auto",
+                padding: isMobile ? "3px 10px" : "6px 20px",
+              }}
             >
               Read More
             </HeroButton>
@@ -109,9 +125,6 @@ export default PostCard;
 const HeroButton = styled(Button)({
   boxShadow: "none",
   textTransform: "none",
-  fontSize: 26,
-  margin: "25px auto",
-  padding: "6px 20px",
   border: "1px solid",
   borderRadius: "50px",
   lineHeight: 1.5,

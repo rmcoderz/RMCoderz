@@ -28,9 +28,9 @@ const DetailBlog = ({ blog }) => {
           }}
         >
           <PostDetails blog={blog} isMobile={isMobile} />
-          <Author author={blog.author} />
-          <CommentsForm slug={blog.slug} />
-          <Comments slug={blog.slug} />
+          <Author author={blog.author} isMobile={isMobile} />
+          <CommentsForm slug={blog.slug} isMobile={isMobile} />
+          <Comments slug={blog.slug} isMobile={isMobile} />
         </Grid>
         <Grid item xs={12} sm={12} lg={4}>
           <Box
@@ -42,8 +42,9 @@ const DetailBlog = ({ blog }) => {
             <PostWidget
               slug={blog.slug}
               categories={blog.categories.map((category) => category.slug)}
+              isMobile={isMobile}
             />
-            <Categories />
+            <Categories isMobile={isMobile} />
           </Box>
         </Grid>
       </Grid>

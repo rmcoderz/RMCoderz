@@ -4,16 +4,12 @@ import {
   TextField,
   Typography,
   styled,
-  useTheme,
-  useMediaQuery,
   Button,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { submitComment } from "../../ServicesQl";
 
-const CommentsForm = ({ slug }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+const CommentsForm = ({ slug, isMobile }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -89,7 +85,7 @@ const CommentsForm = ({ slug }) => {
   return (
     <Box
       sx={{
-        width: "60%",
+        width: isMobile ? "100%" : "60%",
         margin: "auto",
         backgroundColor: "#ffffe6",
         padding: "20px",

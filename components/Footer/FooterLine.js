@@ -13,7 +13,7 @@ const FooterLine = () => {
     <Box
       sx={{
         backgroundColor: "#fff",
-        padding: "50px 20px 20px 20px",
+        padding: "20px 20px 20px 20px",
         width: "full",
       }}
     >
@@ -29,9 +29,24 @@ const FooterLine = () => {
           justifyContent: "center",
         }}
       >
-        <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
+        <Grid
+          container
+          rowSpacing={1}
+          columnSpacing={{ sm: 2, md: 3 }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Grid item xs={12} sm={12} md={4} lg={4}>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <Typography
                 sx={{
                   fontSize: "26",

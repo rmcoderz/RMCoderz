@@ -13,6 +13,8 @@ import React from "react";
 const AboutCard = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isDesktop = useMediaQuery(theme.breakpoints.between("lg", "xl"));
+
   return (
     <Box
       sx={{
@@ -48,7 +50,7 @@ const AboutCard = () => {
           lg={3}
           sx={{ marginLeft: "auto", marginRight: "auto" }}
         >
-          <AboutCustomCard sx={{ minHeight: "300px" }}>
+          <AboutCustomCard sx={{ minHeight: isDesktop ? "520px" : "410px" }}>
             <CardContent>
               <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 Increase your E-commerce Store purchases with Digital Marketing
@@ -77,7 +79,7 @@ const AboutCard = () => {
           lg={3}
           sx={{ marginLeft: "auto", marginRight: "auto" }}
         >
-          <AboutCustomCard sx={{ minHeight: "300px" }}>
+          <AboutCustomCard sx={{ minHeight: isDesktop ? "520px" : "410px" }}>
             <CardContent>
               <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 No More Tedious and Time-Consuming tasks
@@ -119,7 +121,7 @@ const AboutCard = () => {
           lg={3}
           sx={{ marginLeft: "auto", marginRight: "auto" }}
         >
-          <AboutCustomCard sx={{ minHeight: "300px" }}>
+          <AboutCustomCard sx={{ minHeight: isDesktop ? "520px" : "410px" }}>
             <CardContent>
               <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 Increase your E-commerce purchases with us through Digital
@@ -159,7 +161,7 @@ const AboutCard = () => {
           lg={3}
           sx={{ marginLeft: "auto", marginRight: "auto" }}
         >
-          <AboutCustomCard sx={{ minHeight: "300px" }}>
+          <AboutCustomCard sx={{ minHeight: isDesktop ? "520px" : "410px" }}>
             <CardContent>
               <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 Check the performance of your products as compared to the

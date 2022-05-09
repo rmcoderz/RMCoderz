@@ -19,6 +19,8 @@ import GroupsIcon from "@mui/icons-material/Groups";
 const Services = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isLaptop = useMediaQuery(theme.breakpoints.between("lg", "xl"));
+
   return (
     <>
       <Box
@@ -27,6 +29,7 @@ const Services = () => {
           marginLeft: "auto",
           marginRight: "auto",
           textAlign: "center",
+          marginTop: "40px",
         }}
       >
         {/* <Typography
@@ -48,7 +51,7 @@ const Services = () => {
             color: "#003030",
           }}
         >
-          {`<Services />`}
+          {`<SERVICES />`}
         </Typography>
         <Typography variant="h5">
           We provide the best quality services in the following categories.
@@ -64,7 +67,7 @@ const Services = () => {
         <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
           <Grid item xs={12} sm={12} md={12} lg={4}>
             <Link href="/service" passHref>
-              <Card sx={{ minHeight: "400px" }}>
+              <Card sx={{ minHeight: isLaptop ? "500px" : "430px" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <CardHeader
                     avatar={
@@ -110,7 +113,7 @@ const Services = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={4}>
             <Link href="/service" passHref>
-              <Card sx={{ minHeight: "400px" }}>
+              <Card sx={{ minHeight: isLaptop ? "500px" : "430px" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <CardHeader
                     avatar={
@@ -157,7 +160,7 @@ const Services = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={4}>
             <Link href="/service" passHref>
-              <Card sx={{ minHeight: "400px" }}>
+              <Card sx={{ minHeight: isLaptop ? "500px" : "430px" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                   <CardHeader
                     avatar={

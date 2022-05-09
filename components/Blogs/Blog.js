@@ -6,6 +6,7 @@ import PostWidget from "./PostWidget";
 export default function Blog({ posts }) {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box sx={{ width: "80%", margin: "40px auto" }}>
@@ -16,14 +17,12 @@ export default function Blog({ posts }) {
           sm={12}
           lg={8}
           sx={{
-            marginTop: "auto",
-            marginBottom: "auto",
             marginLeft: "auto",
             marginRight: "auto",
           }}
         >
           {posts.map((post) => (
-            <PostCard post={post.node} key={post.title} />
+            <PostCard post={post.node} key={post.title} isMobile={isMobile} />
           ))}
         </Grid>
         <Grid item xs={12} sm={12} lg={4}>
@@ -33,8 +32,8 @@ export default function Blog({ posts }) {
               position: isDesktop ? "sticky" : "none",
             }}
           >
-            <PostWidget />
-            <Categories />
+            <PostWidget isMobile={isMobile} />
+            <Categories isMobile={isMobile} />
           </Box>
         </Grid>
       </Grid>

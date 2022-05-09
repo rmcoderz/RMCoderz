@@ -1,16 +1,17 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 
-const Author = ({ author }) => {
+const Author = ({ author, isMobile }) => {
   return (
     <Box
       sx={{
-        width: "60%",
+        width: isMobile ? "100%" : "60%",
         backgroundColor: "#003030",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         margin: "60px auto 0px auto",
+        borderRadius: "15px 15px 0px 0px",
       }}
     >
       <Box>
@@ -32,6 +33,7 @@ const Author = ({ author }) => {
           color: "#ffffe6",
           margin: "0px 10px",
           cursor: "pointer",
+          fontSize: isMobile ? "16px" : "24px",
         }}
       >
         {author.name}
@@ -43,6 +45,7 @@ const Author = ({ author }) => {
           color: "#ffffe6",
           margin: "0px 10px",
           cursor: "pointer",
+          fontSize: isMobile ? "16px" : "24px",
         }}
       >
         {author.bio}

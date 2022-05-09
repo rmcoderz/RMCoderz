@@ -1,19 +1,9 @@
-import {
-  Box,
-  Card,
-  Typography,
-  useTheme,
-  useMediaQuery,
-  CardContent,
-  styled,
-} from "@mui/material";
+import { Box, Card, Typography, CardContent, styled } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getComments } from "../../ServicesQl";
 import moment from "moment";
 
-const Comments = ({ slug }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+const Comments = ({ slug, isMobile }) => {
   const [comment, setComment] = useState([]);
 
   useEffect(() => {
@@ -23,10 +13,11 @@ const Comments = ({ slug }) => {
   return (
     <Box
       sx={{
-        width: "60%",
+        width: isMobile ? "100%" : "60%",
         margin: "auto",
         backgroundColor: "#003030",
         padding: "20px",
+        borderRadius: "0px 0px 15px 15px",
       }}
     >
       <Typography
@@ -48,14 +39,25 @@ const Comments = ({ slug }) => {
               variant="h3"
               sx={{
                 fontWeight: "bolder",
-                padding: "20px 0px 20px 0px",
+                padding: "20px 0px 0px 0px",
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: isMobile ? "16px" : "26px",
                 // color: "#ffffe6",
               }}
             >
-              {comment.name} on{" "}
-              {moment(comment.createdAt).format("MMM DD, YYYY")}
+              {comment.name.toUpperCase()}
+            </Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: "bolder",
+                // padding: "20px 0px 20px 0px",
+                fontFamily: "Montserrat, sans-serif",
+                fontSize: isMobile ? "16px" : "26px",
+                // color: "#ffffe6",
+              }}
+            >
+              on {moment(comment.createdAt).format("MMM DD, YYYY")}
             </Typography>
             <Typography
               variant="h2"
@@ -64,10 +66,9 @@ const Comments = ({ slug }) => {
                 padding: "20px 0px 20px 0px",
                 fontFamily: "Montserrat, sans-serif",
                 fontSize: isMobile ? "16px" : "26px",
-                // color: "#ffffe6",
               }}
             >
-              {comment.comment}
+              Comment : {comment.comment}
             </Typography>
           </CardContent>
         </CommentCard>

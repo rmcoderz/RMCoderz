@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getCategories } from "../../ServicesQl";
 import Link from "next/link";
 
-const Categories = () => {
+const Categories = ({ isMobile }) => {
   const [categories, setcategories] = useState([]);
   useEffect(() => {
     getCategories().then((newCategories) => setcategories(newCategories));
@@ -14,7 +14,7 @@ const Categories = () => {
       sx={{
         backgroundColor: "#003030",
         padding: "20px",
-        margin: "10px 0px",
+        margin: "10px 0px 20px 0px",
         borderRadius: "15px",
       }}
     >
@@ -26,6 +26,7 @@ const Categories = () => {
           margin: "0px 10px",
           borderBottom: "2px solid #ffffe6",
           paddingBottom: "10px",
+          fontSize: isMobile ? "18px" : "24px",
         }}
       >
         Categories
@@ -43,6 +44,7 @@ const Categories = () => {
               color: "#ffffe6",
               margin: "15px",
               cursor: "pointer",
+              fontSize: isMobile ? "16px" : "20px",
             }}
           >
             {categories.name}

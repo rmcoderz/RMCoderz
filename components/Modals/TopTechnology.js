@@ -21,8 +21,10 @@ import Link from "next/link";
 const TopTechnology = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isLaptop = useMediaQuery(theme.breakpoints.between("lg", "xl"));
+
   return (
-    <Box sx={{ width: "80%", marginLeft: "auto", marginRight: "auto" }}>
+    <Box sx={{ width: "80%", margin: "40px auto 0 auto" }}>
       {/* <Typography
         variant="h4"
         sx={{ fontWeight: "bold", paddingBottom: "50px" }}
@@ -39,12 +41,12 @@ const TopTechnology = () => {
           color: "#003030",
         }}
       >
-        Ongoing Trending Technologies
+        ONGOING TRENDING TECHNOLOGIES
       </Typography>
       <Grid container rowSpacing={1} columnSpacing={{ sm: 2, md: 3 }}>
         <Grid item xs={12} sm={12} md={6} lg={3}>
           <Link href="/blog" passHref>
-            <Card sx={{ minHeight: "300px" }}>
+            <Card sx={{ minHeight: isLaptop ? "340px" : "300px" }}>
               <CardHeader
                 avatar={
                   <Image src={JS} alt="JavaScript" width={50} height={50} />
@@ -59,7 +61,10 @@ const TopTechnology = () => {
                 </Typography>
                 <Typography
                   variant="h5"
-                  sx={{ fontSize: "14px", textAlign: "justify" }}
+                  sx={{
+                    fontSize: isLaptop ? "12px" : "14px",
+                    textAlign: "justify",
+                  }}
                 >
                   JavaScript, often abbreviated JS, is a programming language
                   that is one of the core technologies of the World Wide Web,
@@ -73,7 +78,7 @@ const TopTechnology = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}>
           <Link href="/blog" passHref>
-            <Card sx={{ minHeight: "300px" }}>
+            <Card sx={{ minHeight: isLaptop ? "340px" : "300px" }}>
               <CardHeader
                 avatar={
                   <Image src={TS} alt="TypeScript" width={50} height={50} />
@@ -88,7 +93,10 @@ const TopTechnology = () => {
                 </Typography>
                 <Typography
                   variant="h5"
-                  sx={{ fontSize: "14px", textAlign: "justify" }}
+                  sx={{
+                    fontSize: isLaptop ? "12px" : "14px",
+                    textAlign: "justify",
+                  }}
                 >
                   TypeScript is a programming language developed and maintained
                   by Microsoft. It is a strict syntactical superset of
@@ -102,7 +110,7 @@ const TopTechnology = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}>
           <Link href="/blog" passHref>
-            <Card sx={{ minHeight: "300px" }}>
+            <Card sx={{ minHeight: isLaptop ? "340px" : "300px" }}>
               <CardHeader
                 avatar={<Image src={VUE} alt="Vue.JS" width={50} height={50} />}
               />
@@ -115,7 +123,10 @@ const TopTechnology = () => {
                 </Typography>
                 <Typography
                   variant="h5"
-                  sx={{ fontSize: "14px", textAlign: "justify" }}
+                  sx={{
+                    fontSize: isLaptop ? "12px" : "14px",
+                    textAlign: "justify",
+                  }}
                 >
                   Vue.js is an open-source model–view–viewmodel front end
                   JavaScript framework for building user interfaces and
@@ -129,7 +140,7 @@ const TopTechnology = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}>
           <Link href="/blog" passHref>
-            <Card sx={{ minHeight: "300px" }}>
+            <Card sx={{ minHeight: isLaptop ? "340px" : "300px" }}>
               <CardHeader
                 avatar={
                   <Image src={NODE} alt="Node.Js" width={70} height={50} />
@@ -144,7 +155,10 @@ const TopTechnology = () => {
                 </Typography>
                 <Typography
                   variant="h5"
-                  sx={{ fontSize: "14px", textAlign: "justify" }}
+                  sx={{
+                    fontSize: isLaptop ? "12px" : "14px",
+                    textAlign: "justify",
+                  }}
                 >
                   Node.js is an open-source, cross-platform, back-end JavaScript
                   runtime environment that runs on the V8 engine and executes

@@ -27,6 +27,7 @@ const Footer = () => {
   const router = useRouter();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isLaptop = useMediaQuery(theme.breakpoints.between("md", "lg"));
 
   const handleChange = (e, value) => {
     e.preventDefault();
@@ -46,7 +47,10 @@ const Footer = () => {
             <Link sx={{ cursor: "pointer" }} href="/" passHref>
               <Image src={Logo} alt="RM <CODERZ>" width={250} height={50} />
             </Link>
-            <Typography variant="h5" sx={{ fontSize: "20px" }}>
+            <Typography
+              variant="h5"
+              sx={{ fontSize: isLaptop ? "16px" : "20px" }}
+            >
               RM Coderz is a Software Company started by 2 Software Engineers,
               We provide a best development solution and services as per
               requirements. We have Best HardWorking and Dedicated Developers

@@ -17,6 +17,7 @@ const Hero = () => {
   const router = useRouter();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const isLaptop = useMediaQuery(theme.breakpoints.between("lg", "xl"));
   return (
     <Box sx={{ backgroundColor: "#003030" }}>
       <Box
@@ -24,7 +25,7 @@ const Hero = () => {
           width: "80%",
           marginLeft: "auto",
           marginRight: "auto",
-          height: "800px",
+          height: isLaptop ? "500px" : "800px",
           display: "flex",
         }}
       >

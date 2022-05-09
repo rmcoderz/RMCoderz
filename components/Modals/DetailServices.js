@@ -27,6 +27,7 @@ const DetailServices = () => {
           marginLeft: "auto",
           marginRight: "auto",
           textAlign: "center",
+          marginTop: "40px",
         }}
       >
         {/* <Typography
